@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Milestone, CheckCircle2, Clock, Sparkles, Orbit, Compass, ArrowRight } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { playSound } from '../utils/audio';
 
 export default function JourneyAhead() {
@@ -8,48 +8,48 @@ export default function JourneyAhead() {
   const milestones = [
     {
       id: 0,
-      phase: 'PHASE 01',
-      title: 'FOUNDATION & COMBAT ENGINE',
+      phase: 'ЭТАП 01',
+      title: 'ДВИЖОК И БАЗОВАЯ ФИЗИКА',
       date: 'Q3 2024',
-      status: 'COMPLETED',
-      summary: 'Prototyped core zero-G locomotion, kinetic suit dampeners, and procedural weapon ballistic simulation.',
-      deliverables: ['Custom Physics Pipeline', 'Netcode Prototype 60Hz', 'Internal Stress Arena'],
+      status: 'ЗАВЕРШЕНО',
+      summary: 'Прототипирование перемещения в невесомости, кинетических амортизаторов и баллистической модели оружия.',
+      deliverables: ['Физический пайплайн', 'Прототип сетевого кода 60Гц', 'Внутренняя стресс-арена'],
     },
     {
       id: 1,
-      phase: 'PHASE 02',
-      title: 'ALPHA PLAYTEST // SECTOR 07',
-      date: 'CURRENT LIVE',
-      status: 'ACTIVE NOW',
-      summary: 'Closed combat validation with over 100,000 enlisted operatives. Real-time telemetry optimization and weapon balancing.',
-      deliverables: ['4 Exo-Suit Archetypes', 'Death Mist Hazardous Zone', 'Server Scaling to 128Hz'],
+      phase: 'ЭТАП 02',
+      title: 'АЛЬФА-ТЕСТИРОВАНИЕ // СЕКТОР 07',
+      date: 'ТЕКУЩИЙ ЭТАП',
+      status: 'АКТИВНО СЕЙЧАС',
+      summary: 'Закрытые боевые испытания с более чем 100 000 записавшихся пилотов. Оптимизация сетевого кода и балансировка оружия.',
+      deliverables: ['4 Архетипа экзоскелетов', 'Зона биоугрозы Death Mist', 'Масштабирование серверов до 128Гц'],
     },
     {
       id: 2,
-      phase: 'PHASE 03',
-      title: 'CLOSED BETA: ORBITAL SIEGE',
+      phase: 'ЭТАП 03',
+      title: 'ЗАКРЫТАЯ БЕТА: ОСАДА ОРБИТЫ',
       date: 'Q1 2027',
-      status: 'UPCOMING',
-      summary: 'Introduction of massive 32v32 fleet boarding operations and dynamic planetary drop pods.',
-      deliverables: ['Fleet Siege Game Mode', 'Dynamic Planetary Storms', 'Ranked Circuit Tier 1'],
+      status: 'СКОРО',
+      summary: 'Масштабные бои 32 на 32 с десантными капсулами и абордажем космических крейсеров.',
+      deliverables: ['Режим Осада Флота', 'Динамические бури на планетах', 'Первый сезон рейтинговых боев'],
     },
     {
       id: 3,
-      phase: 'PHASE 04',
-      title: 'GLOBAL CROSS-PLATFORM LAUNCH',
+      phase: 'ЭТАП 04',
+      title: 'ГЛОБАЛЬНЫЙ МИРОВОЙ РЕЛИЗ',
       date: 'Q3 2027',
-      status: 'SCHEDULED',
-      summary: 'Worldwide commercial deployment on PC, PlayStation 5, and Xbox Series X|S with simultaneous cross-play and cross-progression.',
-      deliverables: ['Cross-Play Matchmaking', 'Season 01 Battle Pass', 'Esports Global Open'],
+      status: 'ЗАПЛАНИРОВАНО',
+      summary: 'Одновременный запуск на ПК, PlayStation 5 и Xbox Series X|S с полной поддержкой кросс-плея и единого прогресса.',
+      deliverables: ['Кросс-платформенный матчмейкинг', 'Боевой пропуск 1 Сезона', 'Киберспортивный турнир EV2 Open'],
     },
     {
       id: 4,
-      phase: 'PHASE 05',
-      title: 'EXPANSION: DEEP VOID EXPANSE',
+      phase: 'ЭТАП 05',
+      title: 'РАСШИРЕНИЕ: ГЛУБОКИЙ КОСМОС',
       date: '2028+',
-      status: 'PLANNED',
-      summary: 'Persistent galaxy conquest metagame, player-run orbital stations, and uncharted deep-space anomaly raids.',
-      deliverables: ['Player Starbases', 'Raid Encounters', 'Faction Territory War'],
+      status: 'В ПЛАНАХ',
+      summary: 'Глобальная галактическая мета-игра за контроль секторов, орбитальные базы кланов и рейды в космические аномалии.',
+      deliverables: ['Звездные базы игроков', 'Рейдовые боссы', 'Война фракций за территорию'],
     },
   ];
 
@@ -64,29 +64,26 @@ export default function JourneyAhead() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="font-hud text-xs text-orange-400 tracking-widest uppercase mb-2">
-            // STRATEGIC ROADMAP & EXPANSION
+            // СТРАТЕГИЧЕСКАЯ ДОРОЖНАЯ КАРТА
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-wider uppercase">
-            JOURNEY AHEAD
+            ДОРОЖНАЯ КАРТА
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-rose-500 to-cyan-400 mx-auto mt-4" />
           <p className="max-w-2xl mx-auto text-slate-300 mt-4 text-sm sm:text-base leading-relaxed">
-            Embark on the journey of EV2 - an epic fusion of progress and ambition. Discover our achievements and set sights on future milestones.
+            Отправьтесь в путешествие EV2 — эпический союз прогресса и амбиций. Откройте наши достижения и взгляните на будущие этапы разработки.
           </p>
         </div>
 
         {/* Curved Planetary Arc Visual Representation (from Frame 40) */}
         <div className="relative mb-14 py-8">
-          {/* Glowing Arc Line */}
           <div className="relative h-20 flex items-center justify-between max-w-4xl mx-auto px-4">
-            {/* Glowing trajectory beam */}
             <div className="absolute left-6 right-6 top-1/2 -translate-y-1/2 h-[3px] bg-gradient-to-r from-emerald-500 via-cyan-400 to-orange-500 shadow-[0_0_15px_rgba(56,189,248,0.7)]" />
 
-            {/* Checkpoint nodes */}
             {milestones.map((m, idx) => {
               const isSelected = selectedMilestone === idx;
-              const isPast = m.status === 'COMPLETED';
-              const isCurrent = m.status === 'ACTIVE NOW';
+              const isPast = m.status === 'ЗАВЕРШЕНО';
+              const isCurrent = m.status === 'АКТИВНО СЕЙЧАС';
 
               return (
                 <button
@@ -98,7 +95,6 @@ export default function JourneyAhead() {
                   onMouseEnter={() => playSound('hover')}
                   className="relative z-10 flex flex-col items-center group cursor-pointer focus:outline-none"
                 >
-                  {/* Glowing Node Button */}
                   <div
                     className={`w-12 h-12 rounded-full flex items-center justify-center font-display font-black text-xs transition-all duration-300 ${
                       isSelected
@@ -113,7 +109,6 @@ export default function JourneyAhead() {
                     0{idx + 1}
                   </div>
 
-                  {/* Label under node */}
                   <div className="mt-3 text-center">
                     <span
                       className={`font-hud text-[11px] block tracking-wider uppercase transition-colors ${
@@ -138,7 +133,6 @@ export default function JourneyAhead() {
             const current = milestones[selectedMilestone];
             return (
               <div className="glass-panel-glow p-8 rounded-2xl relative overflow-hidden border border-cyan-500/40 shadow-2xl">
-                {/* Background watermarked phase number */}
                 <div className="absolute right-4 -bottom-6 font-display font-black text-9xl text-slate-800/20 select-none pointer-events-none">
                   0{selectedMilestone + 1}
                 </div>
@@ -147,9 +141,9 @@ export default function JourneyAhead() {
                   <div className="flex items-center space-x-3">
                     <span
                       className={`px-3 py-1 rounded text-xs font-hud font-bold tracking-widest ${
-                        current.status === 'COMPLETED'
+                        current.status === 'ЗАВЕРШЕНО'
                           ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/40'
-                          : current.status === 'ACTIVE NOW'
+                          : current.status === 'АКТИВНО СЕЙЧАС'
                           ? 'bg-cyan-950 text-cyan-300 border border-cyan-500/40 animate-pulse'
                           : 'bg-orange-950 text-orange-400 border border-orange-500/40'
                       }`}
@@ -157,11 +151,11 @@ export default function JourneyAhead() {
                       {current.status}
                     </span>
                     <span className="font-hud text-xs text-slate-400 tracking-wider">
-                      TARGET: {current.date}
+                      СРОКИ: {current.date}
                     </span>
                   </div>
                   <span className="font-mono text-xs text-cyan-400/80">
-                    SECTOR // 0{selectedMilestone + 1}-TRANSMISSION
+                    СЕКТОР // ТРАНСЛЯЦИЯ-0{selectedMilestone + 1}
                   </span>
                 </div>
 
@@ -175,7 +169,7 @@ export default function JourneyAhead() {
 
                 <div className="border-t border-slate-800 pt-6">
                   <div className="font-hud text-xs text-cyan-400 tracking-wider uppercase mb-3">
-                    // KEY DELIVERABLES & PROTOCOLS:
+                    // КЛЮЧЕВЫЕ ЦЕЛИ И ПРОТОКОЛЫ:
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {current.deliverables.map((item) => (

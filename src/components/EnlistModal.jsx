@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Shield, CheckCircle2, Copy, Sparkles, AlertCircle } from 'lucide-react';
+import { X, Shield, CheckCircle2, Copy } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { playSound } from '../utils/audio';
 
@@ -7,7 +7,7 @@ export default function EnlistModal({ isOpen, onClose }) {
   const [callsign, setCallsign] = useState('');
   const [email, setEmail] = useState('');
   const [platform, setPlatform] = useState('PC (Steam)');
-  const [region, setRegion] = useState('EU-Central');
+  const [region, setRegion] = useState('Европа (Франкфурт)');
   const [submitted, setSubmitted] = useState(false);
   const [accessCode, setAccessCode] = useState('');
   const [copied, setCopied] = useState(false);
@@ -18,14 +18,12 @@ export default function EnlistModal({ isOpen, onClose }) {
     e.preventDefault();
     if (!callsign || !email) return;
 
-    // Generate sci-fi operative code
     const randomHex = Math.random().toString(16).substring(2, 8).toUpperCase();
     const code = `EV2-ALPHA-${randomHex}`;
     setAccessCode(code);
     setSubmitted(true);
     playSound('success');
 
-    // Fire cyber confetti
     try {
       confetti({
         particleCount: 80,
@@ -46,7 +44,6 @@ export default function EnlistModal({ isOpen, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
       <div className="relative w-full max-w-lg glass-panel-glow rounded-2xl border border-cyan-500/50 p-6 sm:p-8 shadow-2xl">
-        {/* Close Button */}
         <button
           onClick={() => {
             playSound('click');
@@ -61,24 +58,24 @@ export default function EnlistModal({ isOpen, onClose }) {
           <div>
             <div className="flex items-center space-x-2 text-cyan-400 font-hud text-xs tracking-widest mb-2">
               <Shield className="w-4 h-4" />
-              <span>TERMINAL // ALPHA ENLISTMENT</span>
+              <span>ТЕРМИНАЛ // ЗАПИСЬ НА АЛЬФА-ТЕСТ</span>
             </div>
             <h3 className="font-display font-black text-2xl text-white mb-2">
-              JOIN THE RESISTANCE
+              ВСТУПИТЬ В ОТРЯД СОПРОТИВЛЕНИЯ
             </h3>
             <p className="text-xs text-slate-400 mb-6">
-              Enter your credentials to secure guaranteed access for Sector 07 closed playtests and unlock exclusive founder exo-armor skins.
+              Введите данные пилота для получения гарантированного пропуска на закрытый плейтест Сектора 07 и эксклюзивного скина брони основателя.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block font-hud text-[11px] text-slate-300 uppercase mb-1">
-                  Operative Call-sign
+                  Позывной пилота (Call-sign)
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. VORTEX_99"
+                  placeholder="напр. ВОРТЕКС_77"
                   value={callsign}
                   onChange={(e) => setCallsign(e.target.value)}
                   className="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors font-mono"
@@ -87,7 +84,7 @@ export default function EnlistModal({ isOpen, onClose }) {
 
               <div>
                 <label className="block font-hud text-[11px] text-slate-300 uppercase mb-1">
-                  Encrypted Transmission (Email)
+                  Зашифрованный канал связи (Email)
                 </label>
                 <input
                   type="email"
@@ -102,7 +99,7 @@ export default function EnlistModal({ isOpen, onClose }) {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block font-hud text-[11px] text-slate-300 uppercase mb-1">
-                    Combat Platform
+                    Платформа
                   </label>
                   <select
                     value={platform}
@@ -117,17 +114,17 @@ export default function EnlistModal({ isOpen, onClose }) {
                 </div>
                 <div>
                   <label className="block font-hud text-[11px] text-slate-300 uppercase mb-1">
-                    Relay Region
+                    Регион серверов
                   </label>
                   <select
                     value={region}
                     onChange={(e) => setRegion(e.target.value)}
                     className="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400"
                   >
-                    <option>EU-Central (Frankfurt)</option>
-                    <option>US-East (Virginia)</option>
-                    <option>US-West (Oregon)</option>
-                    <option>Asia-East (Tokyo)</option>
+                    <option>Европа (Франкфурт)</option>
+                    <option>Восточная Европа (Варшава)</option>
+                    <option>Северная Америка</option>
+                    <option>Азия (Токио)</option>
                   </select>
                 </div>
               </div>
@@ -136,7 +133,7 @@ export default function EnlistModal({ isOpen, onClose }) {
                 type="submit"
                 className="w-full py-3.5 mt-4 rounded font-display font-bold text-xs tracking-widest text-slate-950 uppercase bg-gradient-to-r from-cyan-400 via-sky-300 to-orange-400 hover:opacity-95 transition-opacity cursor-pointer shadow-lg shadow-cyan-950/60"
               >
-                AUTHORIZE TRANSMISSION & ENLIST
+                ПОДТВЕРДИТЬ СВЯЗЬ И ПОЛУЧИТЬ ДОСТУП
               </button>
             </form>
           </div>
@@ -146,34 +143,34 @@ export default function EnlistModal({ isOpen, onClose }) {
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <h3 className="font-display font-black text-2xl text-white mb-1">
-              OPERATIVE ENLISTED
+              ПИЛОТ ЗАРЕГИСТРИРОВАН
             </h3>
-            <p className="font-hud text-xs text-cyan-400 mb-6">
-              WELCOME TO SQUADRON SECTOR-07, PILOT {callsign.toUpperCase()}
+            <p className="font-hud text-xs text-cyan-400 mb-6 uppercase">
+              ДОБРО ПОЖАЛОВАТЬ В ЭСКАДРИЛЬЮ, {callsign}!
             </p>
 
             <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800 mb-6">
               <div className="font-hud text-[10px] text-slate-400 uppercase mb-1">
-                YOUR UNIQUE ACCESS TOKEN
+                ВАШ УНИКАЛЬНЫЙ ТОКЕН ДОСТУПА
               </div>
               <div className="font-mono text-lg font-bold text-cyan-300 tracking-wider flex items-center justify-center space-x-2">
                 <span>{accessCode}</span>
                 <button
                   onClick={copyCode}
-                  className="p-1.5 rounded hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"
+                  className="p-1.5 rounded hover:bg-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer"
                 >
                   <Copy className="w-4 h-4" />
                 </button>
               </div>
               {copied && (
                 <div className="text-[11px] text-emerald-400 font-hud mt-1">
-                  COPIED TO CLIPBOARD
+                  СКОПИРОВАНО В БУФЕР ОБМЕНА
                 </div>
               )}
             </div>
 
             <p className="text-xs text-slate-400 mb-6">
-              Alpha server dispatch instructions have been relayed to <span className="text-white font-mono">{email}</span>.
+              Инструкции по подключению к серверам отправлены на <span className="text-white font-mono">{email}</span>.
             </p>
 
             <button
@@ -181,9 +178,9 @@ export default function EnlistModal({ isOpen, onClose }) {
                 playSound('click');
                 onClose();
               }}
-              className="px-6 py-2.5 rounded bg-slate-800 hover:bg-slate-700 text-white font-display text-xs tracking-wider uppercase transition-colors"
+              className="px-6 py-2.5 rounded bg-slate-800 hover:bg-slate-700 text-white font-display text-xs tracking-wider uppercase transition-colors cursor-pointer"
             >
-              RETURN TO ORBIT
+              ВЕРНУТЬСЯ НА ОРБИТУ
             </button>
           </div>
         )}

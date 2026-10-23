@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Shield, Terminal, Menu, X, Sparkles, ExternalLink } from 'lucide-react';
+import { Volume2, VolumeX, Shield, Terminal, Menu, X, Sparkles } from 'lucide-react';
 import { playSound, toggleSound, isSoundEnabled } from '../utils/audio';
 
 export default function Navbar({ onOpenEnlist, onOpenTechModal }) {
@@ -22,18 +22,18 @@ export default function Navbar({ onOpenEnlist, onOpenTechModal }) {
   };
 
   const navLinks = [
-    { label: 'OVERVIEW', href: '#hero' },
-    { label: 'ABOUT GAME', href: '#about' },
-    { label: 'JOURNEY AHEAD', href: '#journey' },
-    { label: 'PICK YOUR SUIT', href: '#suits' },
-    { label: 'DEATH MIST', href: '#deathmist' },
+    { label: 'ГЛАВНАЯ', href: '#hero' },
+    { label: 'ОБ ИГРЕ', href: '#about' },
+    { label: 'ДОРОЖНАЯ КАРТА', href: '#journey' },
+    { label: 'ЭКЗОСКЕЛЕТЫ', href: '#suits' },
+    { label: 'ЗОНА СМЕРТИ', href: '#deathmist' },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#05070f]/85 backdrop-blur-md border-b border-cyan-500/20 py-3 shadow-lg shadow-black/50'
+          ? 'bg-[#05070f]/90 backdrop-blur-md border-b border-cyan-500/20 py-3 shadow-lg shadow-black/50'
           : 'bg-transparent py-5'
       }`}
     >
@@ -68,8 +68,8 @@ export default function Navbar({ onOpenEnlist, onOpenTechModal }) {
             <span className="font-display font-black text-2xl tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-cyan-400 drop-shadow-sm">
               EV2
             </span>
-            <span className="font-hud text-[9px] tracking-widest text-cyan-400/70 -mt-1 uppercase">
-              NEXT-GEN PROTOCOL
+            <span className="font-hud text-[9px] tracking-widest text-cyan-400/80 -mt-1 uppercase">
+              ПРОТОКОЛ НОВОГО ПОКОЛЕНИЯ
             </span>
           </div>
         </a>
@@ -99,7 +99,7 @@ export default function Navbar({ onOpenEnlist, onOpenTechModal }) {
             className="flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-hud tracking-wide bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/40 text-purple-300 hover:border-cyan-400 hover:text-cyan-200 transition-all cursor-pointer shadow-sm hover:shadow-cyan-500/20"
           >
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            <span>AI STACK FROM REELS</span>
+            <span>СВЯЗКА ИЗ РИЛСА</span>
           </button>
         </div>
 
@@ -108,7 +108,7 @@ export default function Navbar({ onOpenEnlist, onOpenTechModal }) {
           {/* Audio toggle */}
           <button
             onClick={handleSoundToggle}
-            title={soundOn ? 'Disable Sound Effects' : 'Enable Sound Effects'}
+            title={soundOn ? 'Выключить звук' : 'Включить звук'}
             className="p-2.5 rounded-lg bg-slate-900/60 border border-slate-700/60 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 transition-all cursor-pointer"
           >
             {soundOn ? (
@@ -132,10 +132,9 @@ export default function Navbar({ onOpenEnlist, onOpenTechModal }) {
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-sky-300 to-orange-400 group-hover:opacity-90 transition-opacity" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.4),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity" />
             <span className="relative z-10 flex items-center space-x-2">
               <Shield className="w-3.5 h-3.5" />
-              <span>JOIN ALPHA</span>
+              <span>ВСТУПИТЬ В АЛЬФУ</span>
             </span>
           </button>
         </div>
@@ -190,7 +189,7 @@ export default function Navbar({ onOpenEnlist, onOpenTechModal }) {
             className="w-full flex items-center justify-center space-x-2 py-2.5 px-4 rounded-lg bg-purple-900/40 border border-purple-500/40 text-purple-200 font-hud text-xs"
           >
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span>AI STACK FROM REELS</span>
+            <span>СВЯЗКА ИЗ РИЛСА</span>
           </button>
 
           <button
@@ -201,7 +200,7 @@ export default function Navbar({ onOpenEnlist, onOpenTechModal }) {
             }}
             className="w-full py-3 bg-gradient-to-r from-cyan-400 to-orange-500 text-slate-950 font-display font-bold text-sm tracking-wider uppercase rounded"
           >
-            JOIN ALPHA ACCESS
+            ЗАПИСАТЬСЯ НА ТЕСТ
           </button>
         </div>
       )}

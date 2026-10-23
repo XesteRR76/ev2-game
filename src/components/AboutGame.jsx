@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Crosshair, Cpu, Globe2, Zap, ShieldAlert, Disc3, ChevronRight } from 'lucide-react';
+import { Crosshair, Cpu, Globe2, Zap, Disc3, ChevronRight } from 'lucide-react';
 import { playSound } from '../utils/audio';
 
 export default function AboutGame() {
@@ -8,13 +8,13 @@ export default function AboutGame() {
   const pillars = [
     {
       id: 'combat',
-      title: 'MODULAR EXOSUITS',
-      tag: 'TECH CLASS // MK-IV',
-      desc: 'Harness high-agility biomechanical chassis equipped with directional thrusters, kinetic barriers, and cybernetic weapon mounts designed for brutal frontline dominance.',
+      title: 'МОДУЛЬНЫЕ ЭКЗОСКЕЛЕТЫ',
+      tag: 'КЛАСС БРОНИ // MK-IV',
+      desc: 'Биомеханические шасси повышенной маневренности с направленными реактивными маневровыми двигателями, кинетическими барьерами и кибернетическими узлами подвески вооружения.',
       stats: [
-        { label: 'Thrust Acceleration', value: '4.8G' },
-        { label: 'Shield Absorption', value: '2,500 MJ' },
-        { label: 'Customization Slots', value: '32 Modules' },
+        { label: 'Ускорение тяги', value: '4.8G' },
+        { label: 'Емкость энергощита', value: '2,500 МДж' },
+        { label: 'Слотов модификаций', value: '32 Модуля' },
       ],
       icon: Cpu,
       color: 'from-cyan-500 to-blue-600',
@@ -22,13 +22,13 @@ export default function AboutGame() {
     },
     {
       id: 'environment',
-      title: 'DYNAMIC PLANETARY HAZARDS',
-      tag: 'SECTORS & GRAVITY',
-      desc: 'Fight across fractured planetary rings, toxic sulfur badlands, and crumbling orbital platforms where gravitational shifts and electromagnetic dust storms alter the rules of engagement.',
+      title: 'ПЛАНЕТАРНЫЕ БУРИ И ГРАВИТАЦИЯ',
+      tag: 'СЕКТОРЫ И АНОМАЛИИ',
+      desc: 'Сражайтесь на расколотых кольцах планет, в серных пустошах и на разрушающихся орбитальных станциях, где гравитационные провалы и ионные бури меняют ход битвы за секунды.',
       stats: [
-        { label: 'Gravity Variance', value: '0.12G - 1.8G' },
-        { label: 'Atmospheric Storms', value: 'Radiation / Mist' },
-        { label: 'Destructible Arenas', value: 'Fully Dynamic' },
+        { label: 'Перепады гравитации', value: '0.12G - 1.8G' },
+        { label: 'Атмосферные бури', value: 'Радиация / Ионы' },
+        { label: 'Разрушаемость', value: 'Полная' },
       ],
       icon: Globe2,
       color: 'from-orange-500 to-rose-600',
@@ -36,13 +36,13 @@ export default function AboutGame() {
     },
     {
       id: 'netcode',
-      title: 'SUB-TICK TACTICAL NETCODE',
-      tag: 'NETWORK ARCHITECTURE',
-      desc: 'Custom-built for competitive esports precision. 128Hz server simulation rate guarantees lightning-fast hit registration, zero ghost bullets, and ultra-fluid zero-g flight maneuvers.',
+      title: 'СУБТИКОВЫЙ СЕТЕВОЙ КОД 128 ГЦ',
+      tag: 'СЕТЕВАЯ АРХИТЕКТУРА',
+      desc: 'Спроектирован для киберспортивной бескомпромиссной точности. Частота симуляции сервера 128 Гц гарантирует мгновенную регистрацию попаданий без ложных промахов.',
       stats: [
-        { label: 'Server Tickrate', value: '128 Hz' },
-        { label: 'Hit Reg Accuracy', value: '99.98%' },
-        { label: 'Average Match Ping', value: '< 28 ms' },
+        { label: 'Тикрейт серверов', value: '128 Гц' },
+        { label: 'Точность регистрации', value: '99.98%' },
+        { label: 'Средний пинг матча', value: '< 28 мс' },
       ],
       icon: Zap,
       color: 'from-purple-500 to-indigo-600',
@@ -56,14 +56,14 @@ export default function AboutGame() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="font-hud text-xs text-cyan-400 tracking-widest uppercase mb-2">
-            // BRIEFING & INTEL ARCHIVE
+            // АРХИВ БРИФИНГА И РАЗВЕДКИ
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-wider uppercase">
-            ABOUT GAME
+            ОБ ИГРЕ
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-orange-500 mx-auto mt-4" />
-          <p className="max-w-2xl mx-auto text-slate-400 mt-4 text-sm sm:text-base">
-            Step into the vast world where high stakes and sci-fi action collide. EV2 is an upcoming fast-paced multiplayer shooter with next-gen visuals, intense PvP battles, and custom exo-suits designed for supremacy.
+          <p className="max-w-2xl mx-auto text-slate-300 mt-4 text-sm sm:text-base">
+            Шагните в мир, где сталкиваются высокие ставки и научно-фантастический экшен. EV2 — это динамичный соревновательный шутер нового поколения с передовой графикой, командными PvP-битвами и боевыми экзоскелетами.
           </p>
         </div>
 
@@ -123,21 +123,15 @@ export default function AboutGame() {
           {/* Active Feature Holo-Display */}
           <div className="lg:col-span-7">
             <div className="glass-panel p-8 rounded-2xl relative overflow-hidden border border-cyan-500/30 shadow-2xl">
-              {/* Corner brackets */}
-              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-cyan-400" />
-              <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-cyan-400" />
-              <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-cyan-400" />
-              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-cyan-400" />
-
               <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
                 <div className="flex items-center space-x-2">
                   <Disc3 className="w-5 h-5 text-orange-400 animate-spin" />
                   <span className="font-hud text-xs text-slate-300 tracking-widest uppercase">
-                    DATASTREAM // {pillars[activeTab].id.toUpperCase()}
+                    ПОТОК ДАННЫХ // {pillars[activeTab].id.toUpperCase()}
                   </span>
                 </div>
                 <span className="font-hud text-xs text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded border border-cyan-500/30">
-                  CLASSIFIED MK-IV
+                  ПРОТОКОЛ MK-IV
                 </span>
               </div>
 

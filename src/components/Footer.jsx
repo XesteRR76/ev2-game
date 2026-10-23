@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { playSound } from '../utils/audio';
 
 export default function Footer({ onOpenTechModal, onOpenEnlist }) {
@@ -14,11 +14,11 @@ export default function Footer({ onOpenTechModal, onOpenEnlist }) {
                 EV2
               </div>
               <span className="font-display font-black text-xl text-white tracking-wider">
-                EV2 // PROJECT
+                ПРОЕКТ EV2
               </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-              Next-generation high-tempo sci-fi shooter powered by modular exosuits and deep space battlegrounds. Built in response to the viral AI design tutorial from Reels.
+              Научно-фантастический соревновательный шутер нового поколения с модульными экзоскелетами. Воссоздан по вирусному руководству по AI-дизайну из рилса.
             </p>
             <div className="flex items-center space-x-3 pt-2">
               <button
@@ -29,7 +29,7 @@ export default function Footer({ onOpenTechModal, onOpenEnlist }) {
                 className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-500/40 text-purple-300 font-hud text-xs hover:border-cyan-400 hover:text-cyan-200 transition-colors cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-                <span>UI-UX-PRO-MAX + 21ST.DEV MAGIC</span>
+                <span>СВЯЗКА UI-UX-PRO-MAX + MAGIC 21ST.DEV</span>
               </button>
             </div>
           </div>
@@ -37,44 +37,44 @@ export default function Footer({ onOpenTechModal, onOpenEnlist }) {
           {/* Quick Links */}
           <div className="md:col-span-3 space-y-3">
             <div className="font-hud text-xs text-white uppercase tracking-wider">
-              NAVIGATION
+              НАВИГАЦИЯ
             </div>
             <ul className="space-y-2 text-xs font-tech">
               <li>
                 <a href="#hero" className="hover:text-cyan-400 transition-colors">
-                  OVERVIEW
+                  ГЛАВНАЯ
                 </a>
               </li>
               <li>
                 <a href="#about" className="hover:text-cyan-400 transition-colors">
-                  ABOUT GAME
+                  ОБ ИГРЕ
                 </a>
               </li>
               <li>
                 <a href="#journey" className="hover:text-cyan-400 transition-colors">
-                  JOURNEY AHEAD (ROADMAP)
+                  ДОРОЖНАЯ КАРТА
                 </a>
               </li>
               <li>
                 <a href="#suits" className="hover:text-cyan-400 transition-colors">
-                  PICK YOUR SUIT
+                  ЭКЗОСКЕЛЕТЫ
                 </a>
               </li>
               <li>
                 <a href="#deathmist" className="hover:text-cyan-400 transition-colors">
-                  DEATH MIST ZONE
+                  ЗОНА СМЕРТИ
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Community & Discord */}
+          {/* Community */}
           <div className="md:col-span-4 space-y-3">
             <div className="font-hud text-xs text-white uppercase tracking-wider">
-              JOIN SECTOR 07 COMMUNITY
+              СООБЩЕСТВО ПИЛОТОВ СЕКТОРА 07
             </div>
             <p className="text-xs text-slate-400">
-              Receive live developer combat logs, tournament notifications, and alpha key giveaways.
+              Получайте боевые сводки разработчиков, расписание турниров и ключи раннего доступа.
             </p>
             <button
               onClick={() => {
@@ -83,20 +83,19 @@ export default function Footer({ onOpenTechModal, onOpenEnlist }) {
               }}
               className="w-full py-2.5 px-4 rounded bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-display font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
             >
-              PRE-REGISTER ALPHA ACCESS
+              ПОЛУЧИТЬ КЛЮЧ АЛЬФА-ТЕСТА
             </button>
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-4">
           <div>
-            © 2026 EV2 PROTOCOL. ALL RIGHTS RESERVED.
+            © 2026 EV2 PROTOCOL. ВСЕ ПРАВА ЗАЩИЩЕНЫ.
           </div>
           <div className="flex space-x-6 text-[11px]">
-            <span>SECURITY LEVEL 4</span>
-            <span>PRIVACY DIRECTIVE</span>
-            <span>TERMS OF ENGAGEMENT</span>
+            <span>УРОВЕНЬ БЕЗОПАСНОСТИ 4</span>
+            <span>КОНФИДЕНЦИАЛЬНОСТЬ</span>
+            <span>РЕГЛАМЕНТ БОЯ</span>
           </div>
         </div>
       </div>

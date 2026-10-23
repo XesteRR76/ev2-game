@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Play, Shield, Activity } from 'lucide-react';
+import { X, Play, Activity } from 'lucide-react';
 import { playSound } from '../utils/audio';
 
 export default function TrailerModal({ isOpen, onClose }) {
@@ -20,18 +20,15 @@ export default function TrailerModal({ isOpen, onClose }) {
 
         <div className="flex items-center space-x-2 text-cyan-400 font-hud text-xs tracking-widest mb-2">
           <Activity className="w-4 h-4 animate-pulse" />
-          <span>CINEMATIC // TACTICAL ARCHIVE</span>
+          <span>СИНЕМАТИК // ТАКТИЧЕСКИЙ АРХИВ</span>
         </div>
         <h3 className="font-display font-black text-2xl text-white mb-4">
-          EV2: SECTOR 07 INVASION
+          EV2: ВТОРЖЕНИЕ В СЕКТОР 07
         </h3>
 
-        {/* Cinematic Preview Player Area */}
         <div className="relative aspect-video rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center overflow-hidden group">
-          {/* Cosmic Glow */}
           <div className="absolute inset-0 bg-gradient-to-tr from-rose-900/40 via-slate-900 to-cyan-950/40 opacity-70" />
 
-          {/* Grid Lines */}
           <div
             className="absolute inset-0 opacity-20 pointer-events-none"
             style={{
@@ -42,26 +39,25 @@ export default function TrailerModal({ isOpen, onClose }) {
           />
 
           <div className="relative z-10 flex flex-col items-center">
-            <div className="w-20 h-20 rounded-full bg-cyan-500/20 border-2 border-cyan-400 flex items-center justify-center text-cyan-300 shadow-[0_0_30px_rgba(56,189,248,0.6)] group-hover:scale-110 transition-transform">
+            <div className="w-20 h-20 rounded-full bg-cyan-500/20 border-2 border-cyan-400 flex items-center justify-center text-cyan-300 shadow-[0_0_30px_rgba(56,189,248,0.6)] group-hover:scale-110 transition-transform cursor-pointer">
               <Play className="w-8 h-8 fill-cyan-400 translate-x-0.5" />
             </div>
             <span className="font-display font-bold text-sm text-white tracking-widest mt-4 uppercase">
-              TRANSMISSION PLAYBACK SIMULATION
+              СИМУЛЯЦИЯ БОЕВОЙ ЗАПИСИ
             </span>
             <span className="font-mono text-xs text-slate-400 mt-1">
-              Resolution: 4K UHD 60FPS // Audio: 7.1 Spatial Atmos
+              Разрешение: 4K UHD 60FPS // Звук: 7.1 Spatial Atmos
             </span>
           </div>
 
-          {/* HUD Overlay elements */}
           <div className="absolute top-4 left-4 font-hud text-[11px] text-cyan-400">
-            REC ● 00:03:42:18
+            ЗАПИСЬ ● 00:03:42:18
           </div>
           <div className="absolute bottom-4 left-4 font-hud text-[11px] text-slate-400">
-            ENCRYPTION: QUANTUM 4096-BIT
+            ШИФРОВАНИЕ: КВАНТОВОЕ 4096-БИТ
           </div>
           <div className="absolute bottom-4 right-4 font-hud text-[11px] text-orange-400">
-            SECTOR 07 // HOSTILES DETECTED
+            СЕКТОР 07 // ОБНАРУЖЕНЫ ВРАГИ
           </div>
         </div>
       </div>
